@@ -1,0 +1,17 @@
+default: &default
+  adapter: sqlite3
+  pool: 50
+  write_timeout: 300
+  read_timeout: 300
+
+development:
+  <<: *default
+  database: "db/xpirit-notes-development.sqlite3"
+
+test:
+  <<: *default
+  database: "db/xpirit-notes-test.sqlite3"
+
+production:
+  <<: *default
+  database: "db/xpirit-notes-production.sqlite3"

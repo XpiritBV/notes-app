@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+  db:
+    image: mcr.microsoft.com/azure-sql-edge
+    restart: always
+    environment:
+      SA_PASSWORD: D3M0%password
+      ACCEPT_EULA: "Y"
+    ports:
+      - "127.0.0.1:1433:1433"
+
+  notes:
+    image: ghcr.io/xpiritbv/notes-app:latest
+    restart: always
+    links:
+      - db
+    ports:
+      - 80:80
+      - 8080:80
+    environment: 
+      DB_ADAPTER: sqlserver
+      DB_HOST: db
+      DB_PORT: 1433
+      DB_USERNAME: sa
+      DB_PASSWORD: D3M0%password
+      DB_DATABASE: notes

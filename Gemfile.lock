@@ -1,0 +1,67 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (6.1.7.1)
+      activesupport (= 6.1.7.1)
+    activerecord (6.1.7.1)
+      activemodel (= 6.1.7.1)
+      activesupport (= 6.1.7.1)
+    activerecord-sqlserver-adapter (6.1.2.1)
+      activerecord (~> 6.1.0)
+      tiny_tds
+    activesupport (6.1.7.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+      zeitwerk (~> 2.3)
+    concurrent-ruby (1.1.10)
+    i18n (1.12.0)
+      concurrent-ruby (~> 1.0)
+    mini_portile2 (2.8.1)
+    minitest (5.17.0)
+    mustermann (3.0.0)
+      ruby2_keywords (~> 0.0.1)
+    nio4r (2.5.8)
+    puma (6.0.2)
+      nio4r (~> 2.0)
+    rack (2.2.6.2)
+    rack-protection (3.0.5)
+      rack
+    rake (13.0.6)
+    ruby2_keywords (0.0.5)
+    sinatra (3.0.5)
+      mustermann (~> 3.0)
+      rack (~> 2.2, >= 2.2.4)
+      rack-protection (= 3.0.5)
+      tilt (~> 2.0)
+    sinatra-activerecord (2.0.26)
+      activerecord (>= 4.1)
+      sinatra (>= 1.0)
+    sqlite3 (1.6.0)
+      mini_portile2 (~> 2.8.0)
+    sqlite3 (1.6.0-arm64-darwin)
+    sqlite3 (1.6.0-x86_64-linux)
+    tilt (2.0.11)
+    tiny_tds (2.1.5)
+    tzinfo (2.0.5)
+      concurrent-ruby (~> 1.0)
+    zeitwerk (2.6.6)
+
+PLATFORMS
+  arm64-darwin-22
+  ruby
+  x86_64-linux
+
+DEPENDENCIES
+  activerecord (~> 6.0)
+  activerecord-sqlserver-adapter (~> 6.1)
+  activesupport
+  puma
+  rake
+  sinatra
+  sinatra-activerecord
+  sqlite3
+
+BUNDLED WITH
+   2.4.1
