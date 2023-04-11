@@ -15,6 +15,8 @@ ENV DB_PORT=""
 ENV DB_USERNAME=""
 ENV DB_PASSWORD=""
 ENV DB_DATABASE=""
+ENV BIND_HOST="0.0.0.0"
+ENV BIND_PORT="80"
 
 COPY --chown=app Gemfile Gemfile.lock ./
 RUN bundle install
@@ -23,4 +25,4 @@ COPY --chown=app . .
 
 CMD bash start.sh
 
-EXPOSE 80
+EXPOSE $BIND_PORT

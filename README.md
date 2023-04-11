@@ -24,14 +24,16 @@ After starting up with the above command, Notes App will be available at [http:/
 
 By default, Notes App will use a local sqlite database file within the container. However, you may override this and use a DBMS of your choice. Notes App will configure the appropriate settings in `database.yml` with your specified values. 
 
-| Environment Variable | Equivalent YAML |
+| Environment Variable | Description |
 |---|---|
-| `DB_ADAPTER` |  `<environment>.adapter`  |
-| `DB_HOST`  | `<environment>.host`  | 
-| `DB_PORT`  | `<environment>.port` |  
-| `DB_DATABASE` |  `<environment>.database` |
-| `DB_USERNAME` | `<environment>.username`  |
-| `DB_PASSWORD` | `<environment>.password`  |
+| `DB_ADAPTER` | database.yml: `<environment>.adapter`  |
+| `DB_HOST`  | database.yml: `<environment>.host`  | 
+| `DB_PORT`  | database.yml: `<environment>.port` |  
+| `DB_DATABASE` | database.yml: `<environment>.database` |
+| `DB_USERNAME` | database.yml: `<environment>.username`  |
+| `DB_PASSWORD` | database.yml: `<environment>.password`  |
+| `BIND_ADDRESS` | Defaults to `0.0.0.0`  |
+| `BIND_PORT` | Defaults to `80`  |
 
 Alternatively, you may specify a Rails database connection string in `DATABASE_URL`. The existing database yaml configuration will be overridden by this value ([docs](https://guides.rubyonrails.org/v4.1/configuring.html#connection-preference)).
 

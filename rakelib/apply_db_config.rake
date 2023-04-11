@@ -2,9 +2,10 @@ desc 'Apply database configuration'
 task :apply_db_config do
     APP_ROOT = File.expand_path("..", __dir__)
 
-    def env_vars_present? 
-        !ENV["DB_ADAPTER"].nil? and !ENV["DB_HOST"].nil? and !ENV["DB_PORT"].nil? and !ENV["DB_DATABASE"].nil? and !ENV["DB_USERNAME"].nil? and !ENV["DB_PASSWORD"].nil? 
-    end 
+    def env_vars_present?
+        required_keys = ["DB_ADAPTER", "DB_HOST", "DB_PORT", "DB_DATABASE", "DB_USERNAME", "DB_PASSWORD"]
+        required_keys.all? { |key| !ENV[key].nil? && !ENV[key].empty? }
+    end
     
     # mirroring Sinatra behavior - https://sinatrarb.com/configuration.html#environment---configurationdeployment-environment
     cur_env = ENV["RACK_ENV"] || "development"
