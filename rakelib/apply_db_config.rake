@@ -39,6 +39,7 @@ task :apply_db_config do
     config[cur_env]["database"] = ENV["DB_DATABASE"]
     config[cur_env]["username"] = ENV["DB_USERNAME"]
     config[cur_env]["password"] = ENV["DB_PASSWORD"]
+    config[cur_env]["azure"] = ENV["DB_IS_AZURE"].downcase == "true"
 
     File.write(File.join(APP_ROOT, 'config', 'database.yml'), config.to_yaml)
 end
