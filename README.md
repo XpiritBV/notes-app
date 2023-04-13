@@ -42,3 +42,7 @@ Alternatively, you may specify a Rails database connection string in `DATABASE_U
 ## Releasing New Versions
 
 This repository contains a [GitHub Action](https://github.com/XpiritBV/notes-app/blob/master/.github/workflows/publish.yml) which builds and publishes the Notes App container to [GHCR](https://github.com/XpiritBV/notes-app/pkgs/container/notes-app) whenever a new release is tagged.
+
+## Deploy Notes App 
+
+This repository contains a set of Terraform configurations describing a secure deployment on Microsoft Azure. You can find these files in the [`/deploy`](https://github.com/XpiritBV/notes-app/tree/master/deploy) folder.
